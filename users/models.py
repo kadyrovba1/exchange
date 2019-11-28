@@ -1,33 +1,25 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
-class CommonInfo(models.Model):
-    create_date = models.DateTimeField(auto_now_add=True)
 
-    class Meta:
-        abstract = True
-
-
-class Producer(CommonInfo):
+class Producer(AbstractUser):
     phone_number = models.CharField(max_length=12, verbose_name='Номер телефона')
-    e_mail = models.EmailField(verbose_name='email', unique=True)
-    name = models.CharField(max_length=20, verbose_name='Название поставщика')
+    email = models.EmailField(verbose_name='email', unique=True)
+    company = models.CharField(max_length=20, verbose_name='Название поставщика')
     address = models.CharField(max_length=255, verbose_name='Адрес поставщика')
 
+    class Meta:
+        fields = ('phone_number', 'email', 'company', 'address')
+        verbose_name = 'Поставщик'
+        verbose_name_plural = 'Поставщики'
 
-class Customer(CommonInfo):
+class Customer(AbstractUser):
     phone_number = models.CharField(max_length=12, verbose_name='Номер телефона')
     e_mail = models.EmailField(verbose_name='email', unique=True)
     first_name = models.CharField(max_length=50, verbose_name='Имя заказчика')
     last_name = models.CharField(max_length=50, verbose_name='Фамилия заказчика')
 
-
-class Product(CommonInfo):
-    producer = models.ForeignKey(Producer, on_delete=models.CASCADE)
-    product_name = models.CharField(max_length=50)
-
-
-class Order(CommonInfo):
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    producer = models.ForeignKey(Producer, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    class Meta:
+        fields = ('phone_number', 'email', 'first_name', 'last_name')
+        verbose_name = 'Заказчик'
