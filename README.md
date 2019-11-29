@@ -1,6 +1,6 @@
 # How to run:
 ### 1.Install Python 3.6 and newer
-### 2.Clone repository: https://github.com/kadyrovba1/freelance.git
+### 2.Clone repository: https://github.com/kadyrovba1/exchange.git
 ### 3.cd into exchange
 ### 4.Install virtualenv
 
