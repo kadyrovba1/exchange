@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-
-
 class Producer(AbstractUser):
     phone_number = models.CharField(max_length=12, verbose_name='Номер телефона')
     email = models.EmailField(verbose_name='email', unique=True)
@@ -10,16 +8,16 @@ class Producer(AbstractUser):
     address = models.CharField(max_length=255, verbose_name='Адрес поставщика')
 
     class Meta:
-        fields = ('phone_number', 'email', 'company', 'address')
         verbose_name = 'Поставщик'
         verbose_name_plural = 'Поставщики'
 
+
 class Customer(AbstractUser):
     phone_number = models.CharField(max_length=12, verbose_name='Номер телефона')
-    e_mail = models.EmailField(verbose_name='email', unique=True)
+    email = models.EmailField(verbose_name='email', unique=True)
     first_name = models.CharField(max_length=50, verbose_name='Имя заказчика')
     last_name = models.CharField(max_length=50, verbose_name='Фамилия заказчика')
 
     class Meta:
-        fields = ('phone_number', 'email', 'first_name', 'last_name')
         verbose_name = 'Заказчик'
+        verbose_name_plural = 'Заказчики'
