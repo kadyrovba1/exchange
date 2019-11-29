@@ -8,10 +8,10 @@
 
 ###6.Activate env:source env/bin/activate
 
-###7.Install required packages: pip install -r requirements.txt
+###7.Install required packages: `pip install -r requirements.txt`
 
-###8.Create .env file and set your variables
+###8.Make migrations to database: `python3 manage.py makemigrations` and `python3 manage.py migrate`
 
-###9.Make migrations to database: python manage.py makemigrations and python manage.py migrate
+###9.Create super user: `python3 manage.py createsuperuser`
 
-#10.Run python manage.py runserver
+###10.Run python manage.py runserver
