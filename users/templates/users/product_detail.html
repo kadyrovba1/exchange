@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Детали заказов</title>
+</head>
+<body>
+    {% block content %}
+    <h1>Компания: {{ product.producer }}</h1>
+    <p>Товар: {{ product.name }}</p>
+    <p>Цена: {{ product.price }}</p>
+    <p>Дата создания: {{ product.create_time }}</p>
+    {% endblock %}
+</body>
+</html>

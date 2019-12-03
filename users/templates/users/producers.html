@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Заказы</title>
-    </head>
-    <body>
-        <h1>Товары</h1>
+<head>
+    <meta charset="UTF-8">
+    <title>Поставщики</title>
+</head>
+<body>
+    <h1>Поставщики</h1>
         {% for product in products %}
         <div>
             <h2><a href="{% url 'product-detail' pk=product.pk %}">{{ product.name }}</a></h2>
@@ -13,5 +13,5 @@
             <h2>{{ product.create_time }}</h2>
         </div>
         {% endfor %}
-    </body>
+</body>
 </html>
