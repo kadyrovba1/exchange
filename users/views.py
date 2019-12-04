@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from .models import Product
+from .models import Product, Producer
 
 
 
@@ -15,4 +15,11 @@ def product_detail(request, pk):
     return render(request, 'users/product_detail.html', {'product': product})
 
 def producers(request):
-    pass
+    producers = Producer.objects.order_by('-create_time')
+    producer = {'producers': producers}
+    return render(request, 'users/producers.html', producer)
+
+def producer_detail(request, pk):
+    producer = get_object_or_404(Producer, pk=pk)
+
+    return render(request, 'users/producer_detail.html', {'producer': producer})

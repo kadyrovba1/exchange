@@ -6,11 +6,11 @@
 </head>
 <body>
     <h1>Поставщики</h1>
-        {% for product in products %}
+        {% for producer in producers %}
         <div>
-            <h2><a href="{% url 'product-detail' pk=product.pk %}">{{ product.name }}</a></h2>
-            <h2>{{ product.price }}</h2>
-            <h2>{{ product.create_time }}</h2>
+            <h2><a href="{% url 'producer-detail' pk=producer.pk %}">{{ producer.company }}</a></h2>
+            <h2>{{ producer.email }}</h2>
+            <h2>{{ producer.create_time }}</h2>
         </div>
         {% endfor %}
 </body>

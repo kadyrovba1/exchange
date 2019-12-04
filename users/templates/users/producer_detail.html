@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Полная информация поставщика</title>
+</head>
+<body>
+    {% block content %}
+    <h2>Название компании: {{ producer.company }}</h2>
+    <h2>Номер телефона: {{ producer.phone_number }}</h2>
+    <h2>Электронная почта: {{ producer.email }}</h2>
+    <h2>Адрес: {{ producer.address }}</h2>
+    <h2>Дата создания: {{ producer.create_time }}</h2>
+    <h2>Товары: <a href="{% url 'product-detail' pk=producer.pk %}">{{ producer.name_producer.all }}</a></h2>
+    {% endblock %}
+</body>
+</html>
